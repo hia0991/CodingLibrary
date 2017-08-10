@@ -1,0 +1,27 @@
+#region 单例模式
+    /// <summary>
+    /// 1.两个static,内部构造,外部调用
+    /// 2.构造方法使用private,的私有构造方法
+    /// </summary>
+public class UIManager
+{
+    private static UIManager _instance;
+
+    public static UIManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new UIManager();
+            }
+            return _instance;
+        }
+    }
+
+    private UIManager()//构造函数
+    {
+        ParseJson();
+    }
+
+}
